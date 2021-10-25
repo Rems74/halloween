@@ -26,12 +26,16 @@ class Tableau1 extends Phaser.Scene{
         }
 
         //filtre film TODO élève : faire une boucle à la place des 3 lignes qui suivent
-        this.load.image('filterFilm1', 'assets/level/filters/film/frame-1.png');
-        this.load.image('filterFilm2', 'assets/level/filters/film/frame-2.png');
-        this.load.image('filterFilm3', 'assets/level/filters/film/frame-3.png');
+        for(let f=1;f<=3;f++){
+            this.load.image ('filterFilm'+f, 'assets/level/filters/film/frame-'+f+'.png')
+        }
+
 
         //texture au fond  TODO élève : faire une boucle pour charger les 3 images et démontrer par la même que vous savez aller au plus simple
-        this.load.image('bg-animation-a', 'assets/level/background-2/bg-animation/bg-animation-a.png');
+        for(let x=1;x<=3;x++){
+            this.load.image('bg-animation-'+x, 'assets/level/background-2/bg-animation/bg-animation-'+x+'.png');
+        }
+
 
     }
 
@@ -46,7 +50,9 @@ class Tableau1 extends Phaser.Scene{
          * Fond très clair avec une trame
          * @type {Phaser.GameObjects.Sprite}
          */
-        let bgAnimationA=this.add.sprite(0,0, 'bg-animation-a').setOrigin(0,0);
+        for(let x=1;x<=3;x++){
+            let bgAnimationX=this.add.sprite(0,0, 'bg-animation-'+x).setOrigin(0,0);
+        }
 
         //--------------background 2 (tout au fond et flou)--------------------
 
