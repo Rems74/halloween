@@ -18,6 +18,8 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('gMid', 'assets/level/ground/g-mid.png');
         this.load.image('gRight', 'assets/level/ground/g-right.png');
         this.load.image('gTree1', 'assets/level/ground/g-tree-1.png');
+        this.load.image('gTree3', 'assets/level/ground/g-tree-3.png');
+        this.load.image('Mushroom1', 'assets/level/ground/g-mushroom1.png');
 
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
         // ALGO : ceci est une boucle
@@ -102,8 +104,12 @@ class Tableau1 extends Phaser.Scene{
          * @type {Phaser.GameObjects.Image}
          */
         let tree1=this.add.image(300,350, 'gTree1').setOrigin(0,1);
-        tree1.setTintFill(0xFF0000); // pratique pour dbugger
+        tree1.setTintFill(0x000000); // pratique pour dbugger
         this.groundContainer.add(tree1);
+
+        let tree3=this.add.image(20,380, 'gTree3') .setOrigin(0,1);
+        tree3.setTintFill(0x000000); // pratique pour dbugger
+        this.groundContainer.add(tree3);
         /**
          * Terrain 1
          * @type {Phaser.GameObjects.Image}
