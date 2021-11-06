@@ -20,12 +20,14 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('gTree1', 'assets/level/ground/g-tree-1.png');
         this.load.image('gTree3', 'assets/level/ground/g-tree-3.png');
         this.load.image('Mushroom1', 'assets/level/ground/g-mushroom1.png');
+        this.load.image('g-wooden-bridge','assets/level/ground/g-wooden-bridge.png');
 
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
         // ALGO : ceci est une boucle
         for(let i=1;i<=5;i++){
             this.load.image('g-grass-'+i, 'assets/level/ground/g-grass-'+i+'.png');
-        }
+
+            this.load.image('g-stone-'+i, 'assets/level/ground/g-stone-'+i+'.png');}
 
         //filtre film TODO élève : faire une boucle à la place des 3 lignes qui suivent
         for(let f=1;f<=3;f++){
@@ -110,6 +112,18 @@ class Tableau1 extends Phaser.Scene{
         let tree3=this.add.image(20,380, 'gTree3') .setOrigin(0,1);
         tree3.setTintFill(0x000000); // pratique pour dbugger
         this.groundContainer.add(tree3);
+
+        let mushroom=this.add.image(170,360, 'Mushroom1'). setOrigin(0,1);
+        mushroom.setTintFill(0x000000);
+        this.groundContainer.add(mushroom)
+
+        let stone2 =this.add.image(490,360, 'g-stone-3'). setOrigin(0,1);
+        stone2.setTintFill(0x000000);
+        this.groundContainer.add(stone2)
+
+        let bridge =this.add.image(550,360, 'g-wooden-bridge'). setOrigin(0,1);
+        bridge.setTintFill(0x000000);
+        this.groundContainer.add(bridge)
         /**
          * Terrain 1
          * @type {Phaser.GameObjects.Image}
