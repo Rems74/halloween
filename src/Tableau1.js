@@ -30,6 +30,7 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('gMush1','assets/level/ground/g-mushroom1.png');
         this.load.image('gBridge','assets/level/ground/g-wooden-bridge.png');
         this.load.image('gBox2','assets/level/ground/g-box-2.png')
+        this.load.image('gBox','assets/level/ground/g-box-1.png')
         for (let g=1;g<=3;g++){
             this.load.image('g-tree-'+g,'assets/level/ground/g-tree-'+g+'.png')
         }
@@ -207,6 +208,15 @@ class Tableau1 extends Phaser.Scene{
         let gRight=this.add.image(gMid3.x+gMid3.width,360,'gRight').setOrigin(0,0);
         this.groundContainer.add(gRight);
 
+        let gLeft2=this.add.image(1700,360,'gLeft').setOrigin(0,0);
+        this.groundContainer.add(gLeft2);
+
+        let gMid4=this.add.image(gLeft2.x+gLeft2.width,360,'gMid').setOrigin(0,0);
+        this.groundContainer.add(gMid4);
+
+        let gRight2=this.add.image(gMid4.x+gMid4.width,360,'gRight').setOrigin(0,0);
+        this.groundContainer.add(gRight2);
+
         /**
          *  @type {Phaser.GameObjects.Image}
          */
@@ -244,26 +254,18 @@ class Tableau1 extends Phaser.Scene{
         let mumut2=this.add.tileSprite(gLeft.x+gLeft.width,370,350,50,'g-grass-5').setOrigin(0,1)
         this.groundContainer.add(mumut2);
 
-        /**
-         * Nos Petits arbrounets
-         */
-
         let gTree1t1=this.add.image(20,-150,'g-tree-2').setOrigin(0,0);
         gTree1t1.flipX=true
         this.groundContainer.add(gTree1t1);
 
-        let gTree2t1=this.add.image(270,-10,'g-tree-2').setOrigin(0,0);
+        let gTree2t1=this.add.image(280,-10,'g-tree-2').setOrigin(0,0);
         gTree2t1.scale=0.7
         this.groundContainer.add(gTree2t1);
 
-        let gTree1t2=this.add.image(740,-50,'g-tree-1').setOrigin(0,0);
+        let gTree1t2=this.add.image(730,-50,'g-tree-1').setOrigin(0,0);
         gTree1t2.scaleY=1.2
         gTree1t2.angle=-15
         this.groundContainer.add(gTree1t2);
-
-        /**
-         * Cailloux, Caisses, Champis...
-         */
 
         let gStone4t1=this.add.image(350,340,'gStone-4').setOrigin(0,0);
         gStone4t1.scale=0.7
@@ -271,6 +273,9 @@ class Tableau1 extends Phaser.Scene{
 
         let gStone4t2=this.add.image(760,340,'gStone-4').setOrigin(0,0);
         this.groundContainer.add(gStone4t2);
+
+        let gStone4t3=this.add.image(1200,340,'gStone-4').setOrigin(0,0);
+        this.groundContainer.add(gStone4t3);
 
         let gMush=this.add.image(150,280,'gMush1').setOrigin(0,0);
         gMush.flipX=true
@@ -281,11 +286,25 @@ class Tableau1 extends Phaser.Scene{
         gBridge.angle=-1
         this.groundContainer.add(gBridge);
 
+        let gBridge2=this.add.image(1300,295,'gBridge').setOrigin(0,0);
+        gBridge2.scale=0.8
+        gBridge2.angle=-1
+        this.groundContainer.add(gBridge2);
+
         let gBox2=this.add.image(500,287,'gBox2').setOrigin(0,0);
         gBox2.scale=0.6
         gBox2.angle=3
         this.groundContainer.add(gBox2);
 
+        let gBox2n3=this.add.image(1000,295,'gBox2').setOrigin(0,0);
+        gBox2n3.scale=0.7
+        this.groundContainer.add(gBox2n3);
+
+        let gBox1=this.add.image(1090,295,'gBox').setOrigin(0,0);
+        this.groundContainer.add(gBox1)
+
+        let gBox1n2=this.add.image(1030,210,'gBox').setOrigin(0,0);
+        this.groundContainer.add(gBox1n2)
         /**
          * filtre type film au premier plan
          * @type {Phaser.GameObjects.Sprite}
@@ -315,7 +334,7 @@ class Tableau1 extends Phaser.Scene{
         //initialise ce qui se passe avec le clavier
         this.initKeyboard();
         // Définit l'espace de déplacement de la caméra
-        this.cameras.main.setBounds(0, 0, 3000, 540);
+        this.cameras.main.setBounds(0, 0, 2000, 540);
         //définit à quelles vitesse se déplacent nos différents plans
         bgAnimationA.scrollFactorX=0;
         this.filterFilm.scrollFactorX=0;
