@@ -194,6 +194,12 @@ class Tableau1 extends Phaser.Scene{
         let gSpike2=this.add.image(560,430,'gSpike-2').setOrigin(0,0);
         this.groundContainer.add(gSpike2);
 
+        let gSpike3=this.add.image(1350,450,'gSpike-1').setOrigin(0,0);
+        this.groundContainer.add(gSpike3);
+
+        let gSpike4=this.add.image(1530,430,'gSpike-2').setOrigin(0,0);
+        this.groundContainer.add(gSpike4);
+
         /**
          * Terrain 1
          * @type {Phaser.GameObjects.Image}
@@ -288,6 +294,11 @@ class Tableau1 extends Phaser.Scene{
         gTree1t3.scaleY=0.9
         gTree1t3.angle=10
         this.groundContainer.add(gTree1t3);
+
+        let gTree1t4=this.add.image(1700,-150,'g-tree-2').setOrigin(0,0);
+        gTree1t4.flipX=true
+        gTree1t4.angle=-12
+        this.groundContainer.add(gTree1t4);
 
         let gStone4t1=this.add.image(350,340,'gStone-4').setOrigin(0,0);
         gStone4t1.scale=0.7
