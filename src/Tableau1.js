@@ -185,21 +185,30 @@ class Tableau1 extends Phaser.Scene{
 
         let gWater=this.add.tileSprite(400,390,2900,300,'gWater').setOrigin(0,0);
         this.groundContainer.add(gWater);
+
+        let Spike1=this.add.image(430,450,'gSpike-1').setOrigin(0,0);
+        this.groundContainer.add(Spike1);
+
+        let Spike2=this.add.image(560,430,'gSpike-2').setOrigin(0,0);
+        this.groundContainer.add(Spike2);
         /**
          * Terrain 1
          * @type {Phaser.GameObjects.Image}
          */
         //ici on va calculer les positions
-        let gMid1=this.add.image(-165,375, 'gMid').setOrigin(0,0);
+        let gMid1=this.add.image(0,350, 'gMid').setOrigin(0,0);
         gMid1.setTintFill(0x000000)
         this.groundContainer.add(gMid1);
+        gMid1.scaleY=2
+
         /**
          * Terrain 2
          * @type {Phaser.GameObjects.Image}
          */
-        let gMid2=this.add.image(gMid1.x+gMid1.width,375, 'gMid').setOrigin(0,0); //on rajoute 1 px pour l'exemple
+        let gMid2=this.add.image(gMid1.x+gMid1.width,355, 'gRight').setOrigin(0,0); //on rajoute 1 px pour l'exemple
         gMid2.setTintFill(0x000000)
         this.groundContainer.add(gMid2);
+        gMid2.scaleX=1.2;
         /**
          * Terrain 3
          * @type {Phaser.GameObjects.Image}
