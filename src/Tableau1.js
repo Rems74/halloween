@@ -216,20 +216,48 @@ class Tableau1 extends Phaser.Scene{
         let gMid3=this.add.image(gMid2.x+gMid2.width,375, 'gRight').setOrigin(0,0);
         gMid3.setTintFill(0x000000)
         this.groundContainer.add(gMid3);
+
+        let gRight=this.add.image(gMid3.x+gMid3.width,360,'gRight').setOrigin(0,0);
+        this.groundContainer.add(gRight);
         /**
          * De l'herbe en textures qui se répète
          * @type {Phaser.GameObjects.TileSprite}
          */
+        let gLeft=this.add.image(750,360,'gLeft').setOrigin(0,0);
+        this.groundContainer.add(gLeft);
+
         let grass=this.add.tileSprite(0,395,gMid3.x+gMid3.width-40,50,'g-grass-1').setOrigin(0,1)
         grass.setTintFill(0x000000)
         this.groundContainer.add(grass);
+
+
+
         /**
          * encore de l'herbe
          * @type {Phaser.GameObjects.TileSprite}
          */
+        let gGrass1=this.add.image(390,310, 'g-grass-1').setOrigin(0,0);
+        this.groundContainer.add(gGrass1);
+
         let grass2=this.add.tileSprite(0,395,gMid3.x+gMid3.width-40,50,'g-grass-3').setOrigin(0,1)
         grass2.setTintFill(0x000000)
         this.groundContainer.add(grass2);
+
+        let gGrass3=this.add.image(120,310, 'g-grass-3').setOrigin(0,0);
+        this.groundContainer.add(gGrass3);
+
+        let gGrass4=this.add.image(5,310, 'g-grass-4').setOrigin(0,0);
+        this.groundContainer.add(gGrass4);
+
+        let gGrass5=this.add.image(200,310, 'g-grass-5').setOrigin(0,0);
+        this.groundContainer.add(gGrass5);
+
+        let gGrass2t2=this.add.image(750,340,'g-grass-2').setOrigin(0,0);
+        gGrass2t2.scale=0.8
+        this.groundContainer.add(gGrass2t2);
+
+        let gGrass5t2=this.add.image(850,310, 'g-grass-5').setOrigin(0,0);
+        this.groundContainer.add(gGrass5t2);
         /**
          * filtre type film au premier plan
          * @type {Phaser.GameObjects.Sprite}
@@ -259,7 +287,7 @@ class Tableau1 extends Phaser.Scene{
         //initialise ce qui se passe avec le clavier
         this.initKeyboard();
         // Définit l'espace de déplacement de la caméra
-        this.cameras.main.setBounds(0, 0, 2000, 540);
+        this.cameras.main.setBounds(0, 0, 3000, 540);
         //définit à quelles vitesse se déplacent nos différents plans
         bgAnimationA.scrollFactorX=0;
         this.filterFilm.scrollFactorX=0;
