@@ -57,6 +57,9 @@ class Tableau1 extends Phaser.Scene{
             this.load.image('bg-animation-'+x, 'assets/level/background-2/bg-animation/bg-animation-'+x+'.png');
         }
 
+        for(let x=1;x<=3;x++){
+            this.load.image('frame'+x, 'assets/level/weather/rain/frame'+x+'.png');
+        }
 
     }
 
@@ -82,9 +85,20 @@ class Tableau1 extends Phaser.Scene{
                 {key:'bg-animation-2'},
                 {key:'bg-animation-3'}
             ],
-            frameRate: 16,
+            frameRate: 20,
             repeat: -1});
         this.bgAnimationA.play('film2');
+
+        this.anims.create({
+            key: 'film3',
+            frames: [
+                {key:'frame1'},
+                {key:'frame2'},
+                {key:'frame3'}
+            ],
+            frameRate: 16,
+            repeat: -1});
+        this.bgAnimationA.play('film3');
         //--------------background 2 (tout au fond et flou)--------------------
 
         /**
