@@ -105,23 +105,23 @@ class Tableau1 extends Phaser.Scene{
          * Arbre
          * @type {Phaser.GameObjects.Image}
          */
-        let tree1=this.add.image(300,385, 'gTree1').setOrigin(0,1);
+        let tree1=this.add.image(300,350, 'gTree1').setOrigin(0,1);
         tree1.setTintFill(0x000000); // pratique pour dbugger
         this.groundContainer.add(tree1);
 
-        let tree3=this.add.image(20,385, 'gTree3') .setOrigin(0,1);
+        let tree3=this.add.image(20,380, 'gTree3') .setOrigin(0,1);
         tree3.setTintFill(0x000000); // pratique pour dbugger
         this.groundContainer.add(tree3);
 
-        let mushroom=this.add.image(170,385, 'Mushroom1'). setOrigin(0,1);
+        let mushroom=this.add.image(170,360, 'Mushroom1'). setOrigin(0,1);
         mushroom.setTintFill(0x000000);
         this.groundContainer.add(mushroom)
 
-        let stone2 =this.add.image(320,385, 'g-stone-3'). setOrigin(0,1);
+        let stone2 =this.add.image(490,360, 'g-stone-3'). setOrigin(0,1);
         stone2.setTintFill(0x000000);
         this.groundContainer.add(stone2)
 
-        let bridge =this.add.image(380,375, 'g-wooden-bridge'). setOrigin(0,1);
+        let bridge =this.add.image(550,360, 'g-wooden-bridge'). setOrigin(0,1);
         bridge.setTintFill(0x000000);
         this.groundContainer.add(bridge)
         /**
@@ -129,36 +129,31 @@ class Tableau1 extends Phaser.Scene{
          * @type {Phaser.GameObjects.Image}
          */
         //ici on va calculer les positions
-        let gMid1=this.add.image(-165,375, 'gMid').setOrigin(0,0);
-        gMid1.setTintFill(0x000000)
+        let gMid1=this.add.image(0,350, 'gMid').setOrigin(0,0);
         this.groundContainer.add(gMid1);
         /**
          * Terrain 2
          * @type {Phaser.GameObjects.Image}
          */
-        let gMid2=this.add.image(gMid1.x+gMid1.width,375, 'gMid').setOrigin(0,0); //on rajoute 1 px pour l'exemple
-        gMid2.setTintFill(0x000000)
+        let gMid2=this.add.image(gMid1.x+gMid1.width+1,350, 'gMid').setOrigin(0,0); //on rajoute 1 px pour l'exemple
         this.groundContainer.add(gMid2);
         /**
          * Terrain 3
          * @type {Phaser.GameObjects.Image}
          */
-        let gMid3=this.add.image(gMid2.x+gMid2.width,375, 'gRight').setOrigin(0,0);
-        gMid3.setTintFill(0x000000)
+        let gMid3=this.add.image(gMid2.x+gMid2.width,350, 'gRight').setOrigin(0,0);
         this.groundContainer.add(gMid3);
         /**
          * De l'herbe en textures qui se répète
          * @type {Phaser.GameObjects.TileSprite}
          */
-        let grass=this.add.tileSprite(0,395,gMid3.x+gMid3.width-40,50,'g-grass-1').setOrigin(0,1)
-        grass.setTintFill(0x000000)
+        let grass=this.add.tileSprite(0,370,gMid3.x+gMid3.width-40,50,'g-grass-1').setOrigin(0,1)
         this.groundContainer.add(grass);
         /**
          * encore de l'herbe
          * @type {Phaser.GameObjects.TileSprite}
          */
-        let grass2=this.add.tileSprite(0,395,gMid3.x+gMid3.width-40,50,'g-grass-3').setOrigin(0,1)
-        grass2.setTintFill(0x000000)
+        let grass2=this.add.tileSprite(0,370,gMid3.x+gMid3.width-40,50,'g-grass-3').setOrigin(0,1)
         this.groundContainer.add(grass2);
         /**
          * filtre type film au premier plan
