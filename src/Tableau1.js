@@ -111,6 +111,11 @@ class Tableau1 extends Phaser.Scene{
         this.bg2Container.add(bg2Tree3);
         bg2Tree3.angle=-10;
 
+        let bg2Tree4=this.add.image(900,-30,'bg2-tree-3').setOrigin(0,0);
+        bg2Tree3.scale=0.9
+        this.bg2Container.add(bg2Tree4);
+        bg2Tree4.angle=5;
+
         //--------------background 1 (gris) --------------------
 
         /**
@@ -266,6 +271,11 @@ class Tableau1 extends Phaser.Scene{
         gTree1t2.scaleY=1.2
         gTree1t2.angle=-15
         this.groundContainer.add(gTree1t2);
+
+        let gTree1t3=this.add.image(1300,-50,'g-tree-1').setOrigin(0,0);
+        gTree1t3.scaleY=0.9
+        gTree1t3.angle=10
+        this.groundContainer.add(gTree1t3);
 
         let gStone4t1=this.add.image(350,340,'gStone-4').setOrigin(0,0);
         gStone4t1.scale=0.7
