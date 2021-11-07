@@ -71,8 +71,20 @@ class Tableau1 extends Phaser.Scene{
          * Fond très clair avec une trame
          * @type {Phaser.GameObjects.Sprite}
          */
-        let bgAnimationA=this.add.sprite(0,0, 'bg-animation-a').setOrigin(0,0);
+        let bgAnimationA=this.add.sprite(0,0, 'bg-animation-1').setOrigin(0,0);
 
+        this.bgAnimationA = this.add.sprite(0, 0, 'bg-animation-1').setOrigin(0,0);
+
+        this.anims.create({
+            key: 'film2',
+            frames: [
+                {key:'bg-animation-1'},
+                {key:'bg-animation-2'},
+                {key:'bg-animation-3'}
+            ],
+            frameRate: 16,
+            repeat: -1});
+        this.bgAnimationA.play('film2');
         //--------------background 2 (tout au fond et flou)--------------------
 
         /**
