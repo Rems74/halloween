@@ -55,6 +55,10 @@ class Tableau1 extends Phaser.Scene{
             this.load.image ('filterFilm'+f, 'assets/level/filters/film/frame-'+f+'.png')
         }
 
+        for(let w=1;w<=16;w++){
+            this.load.image ('zombie'+w, 'assets/zombies/z'+w+'.png')
+        }
+
 
         //texture au fond  TODO élève : faire une boucle pour charger les 3 images et démontrer par la même que vous savez aller au plus simple
         for(let x=1;x<=3;x++){
@@ -428,6 +432,7 @@ class Tableau1 extends Phaser.Scene{
         let ftree=this.add.image(2250,270,'fTree').setOrigin(0,0);
         ftree.angle=7
         this.groundContainer.add(ftree)
+        
         /**
          * filtre type film au premier plan
          * @type {Phaser.GameObjects.Sprite}
