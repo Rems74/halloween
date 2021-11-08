@@ -108,7 +108,7 @@ class Tableau1 extends Phaser.Scene{
                 {key:'frame2'},
                 {key:'frame3'}
             ],
-            frameRate: 16,
+            frameRate: 30,
             repeat: -1});
         this.bgAnimationA.play('film3');
         //--------------background 2 (tout au fond et flou)--------------------
@@ -501,7 +501,7 @@ class Tableau1 extends Phaser.Scene{
             switch (kevent.keyCode)
             {
                 case Phaser.Input.Keyboard.KeyCodes.RIGHT:
-                    me.speed=7;
+                    me.speed=1;
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.LEFT:
                     me.speed=-1;
