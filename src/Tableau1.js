@@ -245,10 +245,10 @@ class Tableau1 extends Phaser.Scene{
         let gSpike4=this.add.image(1530,430,'gSpike-2').setOrigin(0,0);
         this.groundContainer.add(gSpike4);
 
-        let gSpike5=this.add.image(2400,450,'gSpike-1').setOrigin(0,0);
+        let gSpike5=this.add.image(2300,470,'gSpike-1').setOrigin(0,0);
         this.groundContainer.add(gSpike5);
 
-        let gSpike6=this.add.image(2450,430,'gSpike-2').setOrigin(0,0);
+        let gSpike6=this.add.image(2480,470,'gSpike-2').setOrigin(0,0);
         this.groundContainer.add(gSpike6);
 
         /**
