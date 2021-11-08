@@ -65,6 +65,10 @@ class Tableau1 extends Phaser.Scene{
             this.load.image('frame'+x, 'assets/level/weather/rain/frame'+x+'.png');
         }
 
+        for(let x=1;x<=3;x++){
+            this.load.image('blood'+x, 'assets/level/filters/bloody/frame'+x+'.png');
+        }
+
     }
 
     /**
@@ -433,9 +437,9 @@ class Tableau1 extends Phaser.Scene{
         this.anims.create({
             key: 'film',
             frames: [
-                {key:'filterFilm1'},
-                {key:'filterFilm2'},
-                {key:'filterFilm3'},
+                {key:'blood1'},
+                {key:'blood2'},
+                {key:'blood3'},
             ],
             frameRate: 16,
             repeat: -1
