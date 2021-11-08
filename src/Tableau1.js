@@ -41,6 +41,7 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('gSpike-1','assets/level/ground/g-spike-1.png');
         this.load.image('gSpike-2','assets/level/ground/g-spike-2.png');
         this.load.image('gStone-4', 'assets/level/ground/g-stone-4.png');
+        this.load.image('fTree', 'assets/level/ground/g-fellen-tree-1.png');
 
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
         // ALGO : ceci est une boucle
@@ -171,6 +172,10 @@ class Tableau1 extends Phaser.Scene{
         bg1Terrain5.scale=0.7
         this.bg1Container.add(bg1Terrain5);
 
+        let bg1Terrain6=this.add.image(1800,260, 'bg1-terrain-1').setOrigin(0,0);
+        bg1Terrain6.scale=0.7
+        this.bg1Container.add(bg1Terrain6);
+
         let bgTree1=this.add.image(-30,-60,'bg1-tree-1').setOrigin(0,0);
         bgTree1.scale=0.8
         this.bg1Container.add(bgTree1);
@@ -188,6 +193,14 @@ class Tableau1 extends Phaser.Scene{
         let bgTree4=this.add.image(1200,-20,'bg1-tree-3').setOrigin(0,0);
         bgTree4.scale=0.7
         this.bg1Container.add(bgTree4);
+
+        let bgTree5=this.add.image(1750,-10,'bg1-tree-2').setOrigin(0,0);
+        bgTree5.scale=0.6
+        this.bg1Container.add(bgTree5);
+
+        let bgTree6=this.add.image(1850,-10,'bg1-tree-2').setOrigin(0,0);
+        bgTree6.scale=0.6
+        this.bg1Container.add(bgTree6);
 
         let bgGrass4=this.add.image(600,400, 'bg1-grass-4').setOrigin(0,0);
         bgGrass4.scale=2
@@ -217,7 +230,7 @@ class Tableau1 extends Phaser.Scene{
         // this.groundContainer.add(tree1);
 
 
-        let gWater=this.add.tileSprite(400,390,2900,300,'gWater').setOrigin(0,0);
+        let gWater=this.add.tileSprite(400,390,1800,300,'gWater').setOrigin(0,0);
         this.groundContainer.add(gWater);
 
         let gSpike1=this.add.image(430,450,'gSpike-1').setOrigin(0,0);
@@ -231,6 +244,12 @@ class Tableau1 extends Phaser.Scene{
 
         let gSpike4=this.add.image(1530,430,'gSpike-2').setOrigin(0,0);
         this.groundContainer.add(gSpike4);
+
+        let gSpike5=this.add.image(2400,450,'gSpike-1').setOrigin(0,0);
+        this.groundContainer.add(gSpike5);
+
+        let gSpike6=this.add.image(2450,430,'gSpike-2').setOrigin(0,0);
+        this.groundContainer.add(gSpike6);
 
         /**
          * Terrain 1
@@ -272,6 +291,15 @@ class Tableau1 extends Phaser.Scene{
         let gRight2=this.add.image(gMid4.x+gMid4.width,360,'gRight').setOrigin(0,0);
         this.groundContainer.add(gRight2);
 
+        let gLeft3=this.add.image(2670,390,'gLeft').setOrigin(0,0);
+        this.groundContainer.add(gLeft3);
+
+        let gMid5=this.add.image(gLeft2.x+gLeft2.width,360,'gMid').setOrigin(0,0);
+        this.groundContainer.add(gMid5);
+
+        let gRight3=this.add.image(gMid4.x+gMid4.width,360,'gRight').setOrigin(0,0);
+        this.groundContainer.add(gRight3);
+
         /**
          *  @type {Phaser.GameObjects.Image}
          */
@@ -297,6 +325,21 @@ class Tableau1 extends Phaser.Scene{
 
         let gGrass5t2=this.add.image(850,310, 'g-grass-5').setOrigin(0,0);
         this.groundContainer.add(gGrass5t2);
+
+        let gGrass1t2=this.add.image(1800,310, 'g-grass-1').setOrigin(0,0);
+        this.groundContainer.add(gGrass1t2);
+
+        let gGrass2t3=this.add.image(2050,330, 'g-grass-2').setOrigin(0,0);
+        this.groundContainer.add(gGrass2t3);
+
+        let gGrass3t2=this.add.image(2200,330, 'g-grass-3').setOrigin(0,0);
+        this.groundContainer.add(gGrass3t2);
+
+        let gGrass4t2=this.add.image(1750,310, 'g-grass-4').setOrigin(0,0);
+        this.groundContainer.add(gGrass4t2);
+
+        let gGrass5t3=this.add.image(1800,310, 'g-grass-5').setOrigin(0,0);
+        this.groundContainer.add(gGrass5t3);
 
         /**
          * De l'herbe en textures qui se répète
@@ -327,9 +370,8 @@ class Tableau1 extends Phaser.Scene{
         gTree1t3.angle=10
         this.groundContainer.add(gTree1t3);
 
-        let gTree1t4=this.add.image(1700,-150,'g-tree-2').setOrigin(0,0);
+        let gTree1t4=this.add.image(1750,-150,'g-tree-1').setOrigin(0,0);
         gTree1t4.flipX=true
-        gTree1t4.angle=-12
         this.groundContainer.add(gTree1t4);
 
         let gStone4t1=this.add.image(350,340,'gStone-4').setOrigin(0,0);
@@ -342,9 +384,17 @@ class Tableau1 extends Phaser.Scene{
         let gStone4t3=this.add.image(1200,340,'gStone-4').setOrigin(0,0);
         this.groundContainer.add(gStone4t3);
 
+        let gStone3=this.add.image(1750,320,'g-stone-5').setOrigin(0,0);
+        gStone3.scale=1.5
+        this.groundContainer.add(gStone3);
+
         let gMush=this.add.image(150,280,'gMush1').setOrigin(0,0);
         gMush.flipX=true
         this.groundContainer.add(gMush);
+
+        let gMush2=this.add.image(2100,320,'gMush1').setOrigin(0,0);
+        gMush2.scale=0.6
+        this.groundContainer.add(gMush2);
 
         let gBridge=this.add.image(400,295,'gBridge').setOrigin(0,0);
         gBridge.scale=0.8
@@ -370,6 +420,10 @@ class Tableau1 extends Phaser.Scene{
 
         let gBox1n2=this.add.image(1030,210,'gBox').setOrigin(0,0);
         this.groundContainer.add(gBox1n2)
+
+        let ftree=this.add.image(2250,270,'fTree').setOrigin(0,0);
+        ftree.angle=7
+        this.groundContainer.add(ftree)
         /**
          * filtre type film au premier plan
          * @type {Phaser.GameObjects.Sprite}
@@ -399,7 +453,7 @@ class Tableau1 extends Phaser.Scene{
         //initialise ce qui se passe avec le clavier
         this.initKeyboard();
         // Définit l'espace de déplacement de la caméra
-        this.cameras.main.setBounds(0, 0, 4000, 540);
+        this.cameras.main.setBounds(0, 0, 2800, 540);
         //définit à quelles vitesse se déplacent nos différents plans
         bgAnimationA.scrollFactorX=0;
         this.filterFilm.scrollFactorX=0;
@@ -418,7 +472,7 @@ class Tableau1 extends Phaser.Scene{
             switch (kevent.keyCode)
             {
                 case Phaser.Input.Keyboard.KeyCodes.RIGHT:
-                    me.speed=3;
+                    me.speed=7;
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.LEFT:
                     me.speed=-1;
