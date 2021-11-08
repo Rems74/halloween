@@ -23,6 +23,8 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('bg1-grass-4','assets/level/background-1/bg-grass-4.png');
         this.load.image('bg1-stone-5', 'assets/level/background-1/bg-stone-5.png');
         this.load.image('bg1-terrain-2','assets/level/background-1/bg-terrain-2.png');
+        this.load.image('bg1-terrain-4','assets/level/background-1/bg-terrain-4.png');
+        this.load.image('bg1-bridge','assets/level/background-1/bg-wooden-bridge.png');
 
         //ground (premier plan noir)
         this.load.image('gMid', 'assets/level/ground/g-mid.png');
@@ -161,9 +163,13 @@ class Tableau1 extends Phaser.Scene{
         bg1Terrain1.scale=0.5
         this.bg1Container.add(bg1Terrain1);
 
-        let bg1Terrain2=this.add.image(1000,300, 'bg1-terrain-2').setOrigin(0,0);
-        bg1Terrain1.scale=0.5
-        this.bg1Container.add(bg1Terrain2);
+        let bg1Terrain4=this.add.image(800,250, 'bg1-terrain-4').setOrigin(0,0);
+        bg1Terrain4.scale=0.7
+        this.bg1Container.add(bg1Terrain4);
+
+        let bg1Terrain5=this.add.image(1600,230, 'bg1-terrain-1').setOrigin(0,0);
+        bg1Terrain5.scale=0.7
+        this.bg1Container.add(bg1Terrain5);
 
         let bgTree1=this.add.image(-30,-60,'bg1-tree-1').setOrigin(0,0);
         bgTree1.scale=0.8
@@ -179,6 +185,10 @@ class Tableau1 extends Phaser.Scene{
         bgTree3.scale=0.7
         this.bg1Container.add(bgTree3);
 
+        let bgTree4=this.add.image(1200,-20,'bg1-tree-3').setOrigin(0,0);
+        bgTree4.scale=0.7
+        this.bg1Container.add(bgTree4);
+
         let bgGrass4=this.add.image(600,400, 'bg1-grass-4').setOrigin(0,0);
         bgGrass4.scale=2
         this.bg1Container.add(bgGrass4);
@@ -186,6 +196,9 @@ class Tableau1 extends Phaser.Scene{
         let bg1Tree1=this.add.image(-30,-60,'bg1-tree-1').setOrigin(0,0);
         bg1Tree1.scale=0.8
         this.bg1Container.add(bg1Tree1);
+
+        let bg1bridge=this.add.image(1320,240,'bg1-bridge').setOrigin(0,0);
+        this.bg1Container.add(bg1bridge);
 
 
         //-------------ground (premier plan noir)---------------------------
@@ -386,7 +399,7 @@ class Tableau1 extends Phaser.Scene{
         //initialise ce qui se passe avec le clavier
         this.initKeyboard();
         // Définit l'espace de déplacement de la caméra
-        this.cameras.main.setBounds(0, 0, 2000, 540);
+        this.cameras.main.setBounds(0, 0, 4000, 540);
         //définit à quelles vitesse se déplacent nos différents plans
         bgAnimationA.scrollFactorX=0;
         this.filterFilm.scrollFactorX=0;
@@ -405,7 +418,7 @@ class Tableau1 extends Phaser.Scene{
             switch (kevent.keyCode)
             {
                 case Phaser.Input.Keyboard.KeyCodes.RIGHT:
-                    me.speed=1;
+                    me.speed=3;
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.LEFT:
                     me.speed=-1;
