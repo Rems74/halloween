@@ -43,7 +43,7 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('gStone-4', 'assets/level/ground/g-stone-4.png');
         this.load.image('fTree', 'assets/level/ground/g-fellen-tree-1.png');
         for (let c=1;c<=10;c++){
-            this.load.image('boy1-'+c,'assets/Characters/boy/boy_style_1/PNG/idle/Layer-'+c+'.png')
+            this.load.image('boy-'+c,'assets/Characters/boy/boy_style_1/PNG/idle/Layer-'+c+'.png')
         }
 
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
@@ -104,16 +104,13 @@ class Tableau1 extends Phaser.Scene{
             repeat: -1});
         this.bgAnimationA.play('film2');
 
-        this.anims.create({
-            key: 'film3',
-            frames: [
-                {key:'frame1'},
-                {key:'frame2'},
-                {key:'frame3'}
-            ],
-            frameRate: 30,
-            repeat: -1});
-        this.bgAnimationA.play('film3');
+
+
+
+
+
+
+
         //--------------background 2 (tout au fond et flou)--------------------
 
         /**
@@ -456,12 +453,45 @@ class Tableau1 extends Phaser.Scene{
         zombie3n2.scale=0.5
         this.groundContainer.add(zombie3n2)
 
+        this.anims.create({
+            key: 'BBoy1',
+            frames: [
+                {key:'boy-1'},
+                {key:'boy-2'},
+                {key:'boy-3'},
+                {key:'boy-4'},
+                {key:'boy-5'},
+                {key:'boy-6'},
+                {key:'boy-7'},
+                {key:'boy-8'},
+                {key:'boy-9'},
+                {key:'boy-10'},
+            ],
+            frameRate: 10,
+            repeat: -1});
+
+
+        this.boy1 = this.add.sprite(150, 210, 'BBoy1').setOrigin(0,0);
+        this.boy1.scale=0.2;
+        this.boy1.play('BBoy1');
 
 
         /**
          * filtre type film au premier plan
          * @type {Phaser.GameObjects.Sprite}
          */
+
+        this.anims.create({
+            key: 'film3',
+            frames: [
+                {key:'frame1'},
+                {key:'frame2'},
+                {key:'frame3'}
+            ],
+            frameRate: 10,
+            repeat: -1});
+        this.bgAnimationA.play('film3');
+
         this.filterFilm = this.add.sprite(0, 0, 'filterFilm1').setOrigin(0,0);
         //animation de 3 images
         this.anims.create({
@@ -475,6 +505,8 @@ class Tableau1 extends Phaser.Scene{
             repeat: -1
         });
         this.filterFilm.play('film');
+
+
 
         //TODO élève faire une animation du même genre que filter mais pour bgAnimationA
 
