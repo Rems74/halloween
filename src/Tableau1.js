@@ -42,6 +42,9 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('gSpike-2','assets/level/ground/g-spike-2.png');
         this.load.image('gStone-4', 'assets/level/ground/g-stone-4.png');
         this.load.image('fTree', 'assets/level/ground/g-fellen-tree-1.png');
+        for (let c=1;c<=10;c++){
+            this.load.image('boy1-'+c,'assets/Characters/boy/boy_style_1/PNG/idle/Layer-'+c+'.png')
+        }
 
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
         // ALGO : ceci est une boucle
@@ -452,6 +455,8 @@ class Tableau1 extends Phaser.Scene{
         let zombie3n2=this.add.image(1860,260,'zombie3').setOrigin(0,0);
         zombie3n2.scale=0.5
         this.groundContainer.add(zombie3n2)
+
+
 
         /**
          * filtre type film au premier plan
