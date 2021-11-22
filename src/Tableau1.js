@@ -110,11 +110,6 @@ class Tableau1 extends Phaser.Scene{
 
 
 
-
-
-
-
-
         //--------------background 2 (tout au fond et flou)--------------------
 
         /**
@@ -457,6 +452,8 @@ class Tableau1 extends Phaser.Scene{
         zombie3n2.scale=0.5
         this.groundContainer.add(zombie3n2)
 
+        //animation du personnage
+
         this.anims.create({
             key: 'BBoy1',
             frames: [
@@ -485,8 +482,8 @@ class Tableau1 extends Phaser.Scene{
             repeat: -1});
 
 
-        this.boy1 = this.add.sprite(150, 210, 'BBoy1').setOrigin(0,0);
-        this.boy1.scale=0.2;
+        this.boy1 = this.add.sprite(140, 190, 'BBoy1').setOrigin(0,0);
+        this.boy1.scale=0.25;
         this.boy1.play('BBoy1');
 
 
@@ -495,16 +492,6 @@ class Tableau1 extends Phaser.Scene{
          * @type {Phaser.GameObjects.Sprite}
          */
 
-        this.anims.create({
-            key: 'film3',
-            frames: [
-                {key:'frame1'},
-                {key:'frame2'},
-                {key:'frame3'}
-            ],
-            frameRate: 10,
-            repeat: -1});
-        this.bgAnimationA.play('film3');
 
         this.filterFilm = this.add.sprite(0, 0, 'filterFilm1').setOrigin(0,0);
         //animation de 3 images
@@ -520,7 +507,18 @@ class Tableau1 extends Phaser.Scene{
         });
         this.filterFilm.play('film');
 
-
+//pluie
+        this.anims.create({
+            key: 'film3',
+            frames: [
+                {key:'frame1'},
+                {key:'frame2'},
+                {key:'frame3'}
+            ],
+            frameRate: 16,
+            repeat: -1});
+        this.bgAnimationA.scale=1.5
+        this.bgAnimationA.play('film3');
 
         //TODO élève faire une animation du même genre que filter mais pour bgAnimationA
 
