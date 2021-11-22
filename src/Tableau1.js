@@ -46,6 +46,10 @@ class Tableau1 extends Phaser.Scene{
             this.load.image('boy-'+c,'assets/Characters/boy/boy_style_1/PNG/idle/Layer-'+c+'.png')
         }
 
+        for (let c=1;c<=10;c++){
+            this.load.image('boy2-'+c,'assets/Characters/boy/boy_style_1/PNG/idle2/Layer2-'+c+'.png')
+        }
+
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
         // ALGO : ceci est une boucle
         for(let i=1;i<=5;i++){
@@ -466,6 +470,16 @@ class Tableau1 extends Phaser.Scene{
                 {key:'boy-8'},
                 {key:'boy-9'},
                 {key:'boy-10'},
+                {key:'boy2-1'},
+                {key:'boy2-2'},
+                {key:'boy2-3'},
+                {key:'boy2-4'},
+                {key:'boy2-5'},
+                {key:'boy2-6'},
+                {key:'boy2-7'},
+                {key:'boy2-8'},
+                {key:'boy2-9'},
+                {key:'boy2-10'},
             ],
             frameRate: 10,
             repeat: -1});
