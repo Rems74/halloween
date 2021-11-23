@@ -45,10 +45,16 @@ class Tableau1 extends Phaser.Scene{
         for (let c=1;c<=10;c++){
             this.load.image('boy-'+c,'assets/Characters/boy/boy_style_1/PNG/idle/Layer-'+c+'.png')
         }
-
         for (let c=1;c<=10;c++){
             this.load.image('boy2-'+c,'assets/Characters/boy/boy_style_1/PNG/idle2/Layer2-'+c+'.png')
         }
+        for (let c=1;c<=10;c++){
+            this.load.image('boy3-'+c,'assets/Characters/boy/boy_style_2/PNG/idle/Layer-'+c+'.png')
+        }
+        for (let c=1;c<=10;c++){
+            this.load.image('boy4-'+c,'assets/Characters/boy/boy_style_2/PNG/idle2/Layer-'+c+'.png')
+        }
+
 
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
         // ALGO : ceci est une boucle
@@ -485,6 +491,40 @@ class Tableau1 extends Phaser.Scene{
         this.boy1 = this.add.sprite(140, 190, 'BBoy1').setOrigin(0,0);
         this.boy1.scale=0.25;
         this.boy1.play('BBoy1');
+
+
+        this.anims.create({
+            key: 'BBoy2',
+            frames: [
+                {key:'boy4-1'},
+                {key:'boy4-2'},
+                {key:'boy4-3'},
+                {key:'boy4-4'},
+                {key:'boy4-5'},
+                {key:'boy4-6'},
+                {key:'boy4-7'},
+                {key:'boy4-8'},
+                {key:'boy4-9'},
+                {key:'boy4-10'},
+                {key:'boy3-1'},
+                {key:'boy3-2'},
+                {key:'boy3-3'},
+                {key:'boy3-4'},
+                {key:'boy3-5'},
+                {key:'boy3-6'},
+                {key:'boy3-7'},
+                {key:'boy3-8'},
+                {key:'boy3-9'},
+                {key:'boy3-10'},
+
+            ],
+            frameRate: 10,
+            repeat: -1});
+
+
+        this.boy2 = this.add.sprite(110, 200, 'BBoy2').setOrigin(0,0);
+        this.boy2.scale=0.25;
+        this.boy2.play('BBoy2');
 
 
         /**
