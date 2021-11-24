@@ -54,6 +54,18 @@ class Tableau1 extends Phaser.Scene{
         for (let c=1;c<=10;c++){
             this.load.image('boy4-'+c,'assets/Characters/boy/boy_style_2/PNG/idle2/Layer-'+c+'.png')
         }
+        for (let c=1;c<=10;c++){
+            this.load.image('monster-'+c,'assets/Characters/enemy 1/PNG/idle/Layer-'+c+'.png')
+        }
+        for (let c=1;c<=10;c++){
+            this.load.image('monster2-'+c,'assets/Characters/enemy 1/PNG/attack/Layer-'+c+'.png')
+        }
+        for (let c=1;c<=10;c++){
+            this.load.image('monster3-'+c,'assets/Characters/enemy 2/PNG/idle/Layer-'+c+'.png')
+        }
+        for (let c=1;c<=10;c++){
+            this.load.image('monster4-'+c,'assets/Characters/enemy 2/PNG/attack/Layer-'+c+'.png')
+        }
 
 
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
@@ -526,6 +538,56 @@ class Tableau1 extends Phaser.Scene{
         this.boy2.scale=0.25;
         this.boy2.play('BBoy2');
 
+        this.anims.create({
+            key: 'monster1',
+            frames: [
+                {key:'monster-1'},
+                {key:'monster-2'},
+                {key:'monster-3'},
+                {key:'monster-4'},
+                {key:'monster-5'},
+                {key:'monster-6'},
+                {key:'monster-7'},
+                {key:'monster-8'},
+                {key:'monster-9'},
+                {key:'monster-10'},
+                {key:'monster2-1'},
+                {key:'monster2-2'},
+                {key:'monster2-3'},
+                {key:'monster2-4'},
+                {key:'monster2-5'},
+                {key:'monster2-6'},
+                {key:'monster2-7'},
+                {key:'monster2-8'},
+                {key:'monster2-9'},
+            ],
+            frameRate: 10,
+            repeat: -1});
+
+
+        this.monster1 = this.add.sprite(580, 180, 'monster1').setOrigin(0,0);
+        this.monster1.setScale(-0.25,0.25)
+        this.monster1.play('monster1');
+
+        this.anims.create({
+            key: 'monster2',
+            frames: [
+                {key:'monster3-1'},
+                {key:'monster3-2'},
+                {key:'monster3-3'},
+                {key:'monster3-4'},
+                {key:'monster3-5'},
+                {key:'monster3-6'},
+                
+
+            ],
+            frameRate: 10,
+            repeat: -1});
+
+
+        this.monster2 = this.add.sprite(750, 130, 'monster2').setOrigin(0,0);
+        this.monster2.setScale(-0.25,0.25)
+        this.monster2.play('monster2');
 
         /**
          * filtre type film au premier plan
