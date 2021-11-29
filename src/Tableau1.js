@@ -578,7 +578,7 @@ class Tableau1 extends Phaser.Scene{
                 {key:'monster3-4'},
                 {key:'monster3-5'},
                 {key:'monster3-6'},
-                
+
 
             ],
             frameRate: 10,
