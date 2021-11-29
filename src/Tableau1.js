@@ -624,6 +624,18 @@ class Tableau1 extends Phaser.Scene{
         this.monster2.setScale(-0.25,0.25)
         this.monster2.play('monster2');
 
+        let image2 = this.monster2.play(750, 130, 'monster2');
+        this.monster2.flipX = true
+
+        let tween2 = this.tweens.add({
+            targets: image2,
+            x: 50,
+            duration: 3000,
+            ease: 'Linear',
+            loop: -1,
+            yoyo: true
+        });
+
         /**
          * filtre type film au premier plan
          * @type {Phaser.GameObjects.Sprite}
@@ -722,6 +734,14 @@ console.log(this.boy3.x)
         }
         if (this.boy3.x == 380 ){
             this.boy3.flipX=false
+        }
+
+        if(this.monster2.x == 50){
+            console.log('mdr')
+            this.monster2.flipX=true
+        }
+        if (this.monster2.x == 750 ){
+            this.monster2.flipX=false
         }
     }
 
