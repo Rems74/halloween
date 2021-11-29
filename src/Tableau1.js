@@ -54,18 +54,19 @@ class Tableau1 extends Phaser.Scene{
         for (let c=1;c<=10;c++){
             this.load.image('boy4-'+c,'assets/Characters/boy/boy_style_2/PNG/idle2/Layer-'+c+'.png')
         }
+        for (let c=1;c<=8;c++){
+            this.load.image('boy5-'+c,'assets/Characters/boy/boy_style_3/PNG/run/Layer-'+c+'.png')
+        }
         for (let c=1;c<=10;c++){
             this.load.image('monster-'+c,'assets/Characters/enemy 1/PNG/idle/Layer-'+c+'.png')
         }
-        for (let c=1;c<=10;c++){
+        for (let c=1;c<=9;c++){
             this.load.image('monster2-'+c,'assets/Characters/enemy 1/PNG/attack/Layer-'+c+'.png')
         }
-        for (let c=1;c<=10;c++){
+        for (let c=1;c<=6;c++){
             this.load.image('monster3-'+c,'assets/Characters/enemy 2/PNG/idle/Layer-'+c+'.png')
         }
-        for (let c=1;c<=10;c++){
-            this.load.image('monster4-'+c,'assets/Characters/enemy 2/PNG/attack/Layer-'+c+'.png')
-        }
+
 
 
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
@@ -539,6 +540,41 @@ class Tableau1 extends Phaser.Scene{
         this.boy2.play('BBoy2');
 
         this.anims.create({
+            key: 'BBoy5',
+            frames: [
+                {key:'boy5-1'},
+                {key:'boy5-2'},
+                {key:'boy5-3'},
+                {key:'boy5-4'},
+                {key:'boy5-5'},
+                {key:'boy5-6'},
+                {key:'boy5-7'},
+                {key:'boy5-8'},
+
+            ],
+            frameRate: 10,
+            repeat: -1});
+
+
+        this.boy3 = this.add.sprite(380, 250, 'BBoy5').setOrigin(0,0);
+        this.boy3.scale=0.25;
+        this.boy3.play('BBoy5');
+
+
+
+        let image = this.boy3.play(380, 250, 'BBoy5');
+        this.boy3.flipX = true
+
+        let tween = this.tweens.add({
+            targets: image,
+            x: 780,
+            duration: 2000,
+            ease: 'Linear',
+            loop: -1,
+            yoyo: true
+        });
+
+        this.anims.create({
             key: 'monster1',
             frames: [
                 {key:'monster-1'},
@@ -578,7 +614,6 @@ class Tableau1 extends Phaser.Scene{
                 {key:'monster3-4'},
                 {key:'monster3-5'},
                 {key:'monster3-6'},
-
 
             ],
             frameRate: 10,
@@ -680,6 +715,14 @@ class Tableau1 extends Phaser.Scene{
 
         //petit effet de vibrance sur le filtre film au tout premier plan
         this.filterFilm.setAlpha(Phaser.Math.Between(95,100)/100)
+console.log(this.boy3.x)
+        if(this.boy3.x == 780){
+            console.log('mdr')
+            this.boy3.flipX=true
+        }
+        if (this.boy3.x == 380 ){
+            this.boy3.flipX=false
+        }
     }
 
 }
