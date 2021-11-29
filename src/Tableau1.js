@@ -568,7 +568,7 @@ class Tableau1 extends Phaser.Scene{
         let tween = this.tweens.add({
             targets: image,
             x: 780,
-            duration: 2000,
+            duration: 1500,
             ease: 'Linear',
             loop: -1,
             yoyo: true
